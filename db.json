@@ -8,7 +8,17 @@
     {
       "nombre": "Jazmin Saleh",
       "email": "jazmin@alura.com",
-      "id": 1
+      "id": 2
+    },
+    {
+      "nombre": "cami",
+      "email": "cami@gmail.com",
+      "id": "f2189b16-7812-4b39-bf29-405d0c2cb025"
+    },
+    {
+      "nombre": "samira",
+      "email": "samira@gmail.com",
+      "id": "0f5247cd-5512-4cb8-abd0-7af0df30f0a1"
     }
   ]
 }

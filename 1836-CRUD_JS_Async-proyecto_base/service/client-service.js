@@ -4,17 +4,43 @@ const listaClientes = () =>
 
 
 const crearCliente = (nombre, email) =>{
-  fetch("http://localhost:3000/perfil", {
+  return fetch("http://localhost:3000/perfil", {
     method: "POST",
     headers:{
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({nombre, email})
+    body: JSON.stringify({nombre, email, id: uuid.v4()})
   })
+}
+
+const eliminarCliente = (id) =>{
+  console.log('se eliminio a ', id);
+  return fetch(`http://localhost:3000/perfil/${id}`,{
+    method: "DELETE",
+  })
+}
+
+const detalleCliente = (id) =>{
+  console.log('se eliminio a ', id);
+  return fetch(`http://localhost:3000/perfil/${id}`).then(respuesta => respuesta.json());
+}
+
+const actualizarCliente = (nombre, email, id) =>{
+  return fetch(`http://localhost:3000/perfil/${id}`,{
+    method: "PUT",
+    headers:{
+      "Content-Type": "application/json"
+    },
+    body:JSON.stringify({nombre, email})
+  }).then(respuesta => respuesta).catch((err) => console.log(err));
 }
 
 export const clientServices = {
   listaClientes,
+  crearCliente,
+  eliminarCliente,
+  detalleCliente,
+  actualizarCliente
 };
 
 
